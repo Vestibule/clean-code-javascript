@@ -45,7 +45,7 @@ improvement. Beat up the code instead!
 
 ## **Variables**
 
-### Use meaningful and pronounceable variable names
+### [T1] Use meaningful and pronounceable variable names
 
 **Bad:**
 
@@ -61,7 +61,7 @@ const currentDate = moment().format("YYYY/MM/DD");
 
 **[⬆ back to top](#table-of-contents)**
 
-### Use the same vocabulary for the same type of variable
+### [T1] Use the same vocabulary for the same type of variable
 
 **Bad:**
 
@@ -79,7 +79,7 @@ getUser();
 
 **[⬆ back to top](#table-of-contents)**
 
-### Use searchable names
+### [T1] Use searchable names
 
 We will read more code than we will ever write. It's important that the code we
 do write is readable and searchable. By _not_ naming variables that end up
@@ -107,7 +107,7 @@ setTimeout(blastOff, MILLISECONDS_IN_A_DAY);
 
 **[⬆ back to top](#table-of-contents)**
 
-### Use explanatory variables
+### [T2] Use explanatory variables
 
 **Bad:**
 
@@ -131,7 +131,7 @@ saveCityZipCode(city, zipCode);
 
 **[⬆ back to top](#table-of-contents)**
 
-### Avoid Mental Mapping
+### [T1] Avoid Mental Mapping
 
 Explicit is better than implicit.
 
@@ -166,7 +166,7 @@ locations.forEach(location => {
 
 **[⬆ back to top](#table-of-contents)**
 
-### Don't add unneeded context
+### [T2] Don't add unneeded context
 
 If your class/object name tells you something, don't repeat that in your
 variable name.
@@ -201,7 +201,7 @@ function paintCar(car) {
 
 **[⬆ back to top](#table-of-contents)**
 
-### Use default arguments instead of short circuiting or conditionals
+### [T3] Use default arguments instead of short circuiting or conditionals
 
 Default arguments are often cleaner than short circuiting. Be aware that if you
 use them, your function will only provide default values for `undefined`
@@ -229,7 +229,7 @@ function createMicrobrewery(name = "Hipster Brew Co.") {
 
 ## **Functions**
 
-### Function arguments (2 or fewer ideally)
+### [T2] Function arguments (2 or fewer ideally)
 
 Limiting the amount of function parameters is incredibly important because it
 makes testing your function easier. Having more than three leads to a
@@ -287,7 +287,7 @@ createMenu({
 
 **[⬆ back to top](#table-of-contents)**
 
-### Functions should do one thing
+### [T2] Functions should do one thing
 
 This is by far the most important rule in software engineering. When functions
 do more than one thing, they are harder to compose, test, and reason about.
@@ -323,7 +323,7 @@ function isActiveClient(client) {
 
 **[⬆ back to top](#table-of-contents)**
 
-### Function names should say what they do
+### [T2] Function names should say what they do
 
 **Bad:**
 
@@ -351,7 +351,7 @@ addMonthToDate(1, date);
 
 **[⬆ back to top](#table-of-contents)**
 
-### Functions should only be one level of abstraction
+### [T3] Functions should only be one level of abstraction
 
 When you have more than one level of abstraction your function is usually
 doing too much. Splitting up functions leads to reusability and easier
@@ -423,7 +423,7 @@ function parse(tokens) {
 
 **[⬆ back to top](#table-of-contents)**
 
-### Remove duplicate code
+### [T2] Remove duplicate code
 
 Do your absolute best to avoid duplicate code. Duplicate code is bad because it
 means that there's more than one place to alter something if you need to change
@@ -509,7 +509,7 @@ function showEmployeeList(employees) {
 
 **[⬆ back to top](#table-of-contents)**
 
-### Set default objects with Object.assign
+### [T3] Set default objects with Object.assign
 
 **Bad:**
 
@@ -562,7 +562,7 @@ createMenu(menuConfig);
 
 **[⬆ back to top](#table-of-contents)**
 
-### Don't use flags as function parameters
+### [T2] Don't use flags as function parameters
 
 Flags tell your user that this function does more than one thing. Functions should do one thing. Split out your functions if they are following different code paths based on a boolean.
 
@@ -592,7 +592,7 @@ function createTempFile(name) {
 
 **[⬆ back to top](#table-of-contents)**
 
-### Avoid Side Effects (part 1)
+### [T1] Avoid Side Effects (part 1)
 
 A function produces a side effect if it does anything other than take a value in
 and return another value or values. A side effect could be writing to a file,
@@ -641,7 +641,7 @@ console.log(newName); // ['Ryan', 'McDermott'];
 
 **[⬆ back to top](#table-of-contents)**
 
-### Avoid Side Effects (part 2)
+### [T3] Avoid Side Effects (part 2)
 
 In JavaScript, primitives are passed by value and objects/arrays are passed by
 reference. In the case of objects and arrays, if your function makes a change
@@ -694,7 +694,7 @@ const addItemToCart = (cart, item) => {
 
 **[⬆ back to top](#table-of-contents)**
 
-### Don't write to global functions
+### [T4] Don't write to global functions
 
 Polluting globals is a bad practice in JavaScript because you could clash with another
 library and the user of your API would be none-the-wiser until they get an
@@ -728,7 +728,7 @@ class SuperArray extends Array {
 
 **[⬆ back to top](#table-of-contents)**
 
-### Favor functional programming over imperative programming
+### [T3] Favor functional programming over imperative programming
 
 JavaScript isn't a functional language in the way that Haskell is, but it has
 a functional flavor to it. Functional languages can be cleaner and easier to test.
@@ -793,7 +793,7 @@ const totalOutput = programmerOutput.reduce(
 
 **[⬆ back to top](#table-of-contents)**
 
-### Encapsulate conditionals
+### [T0] Encapsulate conditionals
 
 **Bad:**
 
@@ -817,7 +817,7 @@ if (shouldShowSpinner(fsmInstance, listNodeInstance)) {
 
 **[⬆ back to top](#table-of-contents)**
 
-### Avoid negative conditionals
+### [T0] Avoid negative conditionals
 
 **Bad:**
 
@@ -845,7 +845,7 @@ if (isDOMNodePresent(node)) {
 
 **[⬆ back to top](#table-of-contents)**
 
-### Avoid conditionals
+### [T3] Avoid conditionals
 
 This seems like an impossible task. Upon first hearing this, most people say,
 "how am I supposed to do anything without an `if` statement?" The answer is that
@@ -905,7 +905,7 @@ class Cessna extends Airplane {
 
 **[⬆ back to top](#table-of-contents)**
 
-### Avoid type-checking (part 1)
+### [T4] Avoid type-checking (part 1)
 
 JavaScript is untyped, which means your functions can take any type of argument.
 Sometimes you are bitten by this freedom and it becomes tempting to do
@@ -934,7 +934,7 @@ function travelToTexas(vehicle) {
 
 **[⬆ back to top](#table-of-contents)**
 
-### Avoid type-checking (part 2)
+### [T4] Avoid type-checking (part 2)
 
 If you are working with basic primitive values like strings and integers,
 and you can't use polymorphism but you still feel the need to type-check,
@@ -971,7 +971,7 @@ function combine(val1, val2) {
 
 **[⬆ back to top](#table-of-contents)**
 
-### Don't over-optimize
+### [T3] Don't over-optimize
 
 Modern browsers do a lot of optimization under-the-hood at runtime. A lot of
 times, if you are optimizing then you are just wasting your time. [There are good
@@ -999,7 +999,7 @@ for (let i = 0; i < list.length; i++) {
 
 **[⬆ back to top](#table-of-contents)**
 
-### Remove dead code
+### [T0] Remove dead code
 
 Dead code is just as bad as duplicate code. There's no reason to keep it in
 your codebase. If it's not being called, get rid of it! It will still be safe
@@ -1035,8 +1035,7 @@ inventoryTracker("apples", req, "www.inventory-awesome.io");
 
 ## **Objects and Data Structures**
 
-### Use getters and setters
-
+### [T5] Use getters and setters
 Using getters and setters to access data on objects could be better than simply
 looking for a property on an object. "Why?" you might ask. Well, here's an
 unorganized list of reasons why:
@@ -1096,7 +1095,7 @@ account.setBalance(100);
 
 **[⬆ back to top](#table-of-contents)**
 
-### Make objects have private members
+### [T5] Make objects have private members
 
 This can be accomplished through closures (for ES5 and below).
 
@@ -1138,7 +1137,7 @@ console.log(`Employee name: ${employee.getName()}`); // Employee name: John Doe
 
 ## **Classes**
 
-### Prefer ES2015/ES6 classes over ES5 plain functions
+### [T2] Prefer ES2015/ES6 classes over ES5 plain functions
 
 It's very difficult to get readable class inheritance, construction, and method
 definitions for classical ES5 classes. If you need inheritance (and be aware
@@ -1223,7 +1222,7 @@ class Human extends Mammal {
 
 **[⬆ back to top](#table-of-contents)**
 
-### Use method chaining
+### [T3] Use method chaining
 
 This pattern is very useful in JavaScript and you see it in many libraries such
 as jQuery and Lodash. It allows your code to be expressive, and less verbose.
@@ -1303,7 +1302,7 @@ const car = new Car("Ford", "F-150", "red").setColor("pink").save();
 
 **[⬆ back to top](#table-of-contents)**
 
-### Prefer composition over inheritance
+### [T3] Prefer composition over inheritance
 
 As stated famously in [_Design Patterns_](https://en.wikipedia.org/wiki/Design_Patterns) by the Gang of Four,
 you should prefer composition over inheritance where you can. There are lots of
@@ -1373,7 +1372,7 @@ class Employee {
 
 **[⬆ back to top](#table-of-contents)**
 
-## **SOLID**
+## [T3] **SOLID**
 
 ### Single Responsibility Principle (SRP)
 
@@ -1826,7 +1825,7 @@ inventoryTracker.requestItems();
 
 **[⬆ back to top](#table-of-contents)**
 
-## **Testing**
+## [T3] **Testing**
 
 Testing is more important than shipping. If you have no tests or an
 inadequate amount, then every time you ship code you won't be sure that you
@@ -1897,7 +1896,7 @@ describe("MomentJS", () => {
 
 **[⬆ back to top](#table-of-contents)**
 
-## **Concurrency**
+## [T1] **Concurrency**
 
 ### Use Promises, not callbacks
 
@@ -1997,7 +1996,7 @@ getCleanCodeArticle()
 
 **[⬆ back to top](#table-of-contents)**
 
-## **Error Handling**
+## [T2] **Error Handling**
 
 Thrown errors are a good thing! They mean the runtime has successfully
 identified when something in your program has gone wrong and it's letting
@@ -2076,7 +2075,7 @@ getdata()
 
 **[⬆ back to top](#table-of-contents)**
 
-## **Formatting**
+## [T0] **Formatting**
 
 Formatting is subjective. Like many rules herein, there is no hard and fast
 rule that you must follow. The main point is DO NOT ARGUE over formatting.
